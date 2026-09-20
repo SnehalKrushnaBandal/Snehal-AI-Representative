@@ -1,0 +1,756 @@
+{
+  "basic_profile": {
+    "full_name": "Snehal Krushna Bandal",
+    "preferred_name": "Snehal",
+    "headline": "Full Stack Web Developer",
+    "current_status": "Final-year B.E. Information Technology student",
+    "location": "Mumbai, Maharashtra, India",
+    "country": "India",
+    "college": "Atharva College of Engineering",
+    "university": "Mumbai University",
+    "degree": "Bachelor of Engineering",
+    "branch": "Information Technology",
+    "graduation_year": "2027",
+    "profile_summary": "Full Stack Web Developer and final-year Information Technology undergraduate with hands-on experience across React.js, Node.js, Spring Boot, and REST API development, with practical exposure to AI and LLM-based applications."
+  },
+
+  "education": [
+    {
+      "institution": "Atharva College of Engineering",
+      "degree": "B.E.",
+      "field": "Information Technology",
+      "location": "Mumbai, Maharashtra, India",
+      "start_year": "2024",
+      "end_year": "2027",
+      "status": "Currently pursuing",
+      "result": "CGPA: 9.13"
+    },
+    {
+      "institution": "Government Polytechnic Awasari (KH)",
+      "degree": "Diploma",
+      "field": "Information Technology",
+      "location": "Maharashtra, India",
+      "start_year": "2021",
+      "end_year": "2024",
+      "status": "Completed",
+      "result": "91.2%"
+    },
+    {
+      "institution": "Prof. Dr. N. D. Patil Vidyalaya",
+      "degree": "SSC",
+      "field": "Secondary Education",
+      "location": "Kandivali West, Mumbai, Maharashtra",
+      "start_year": "2010",
+      "end_year": "2020",
+      "status": "Completed",
+      "result": "93.40%"
+    }
+  ],
+
+  "technical_profile": {
+    "programming_languages": ["Java", "Python", "JavaScript", "C", "C++"],
+    "frontend": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Material UI"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "Spring Boot",
+      "Spring Cloud Gateway",
+      "Flask",
+      "FastAPI"
+    ],
+    "databases": ["MySQL", "MongoDB", "PostgreSQL"],
+    "ai_ml": [
+      "Large Language Models",
+      "LLM Application Development",
+      "Prompt Engineering",
+      "LLM-based Semantic Matching",
+      "scikit-learn",
+      "Google Gemini AI",
+      "AI-assisted Application Development",
+      "PDF/DOCX Parsing"
+    ],
+    "cloud": [
+      "Google Cloud",
+      "Google Cloud Vertex AI",
+      "Google Cloud Functions",
+      "Google BigQuery",
+      "Google Compute Engine"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Power BI",
+      "Apache Kafka",
+      "Keycloak",
+      "Eureka Service Discovery"
+    ],
+    "concepts": [
+      "REST API Development",
+      "Microservices Architecture",
+      "Event-Driven Architecture",
+      "Agile Development",
+      "Responsive Web Design",
+      "OAuth2",
+      "JWT",
+      "Service Discovery",
+      "API Gateway"
+    ],
+    "currently_learning": [
+      "AI Engineering",
+      "Advanced Java",
+      "Data Structures and Algorithms",
+      "LLM Application Development"
+    ],
+    "strongest_technologies": [
+      "Java",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "SQL",
+      "MySQL",
+      "React.js"
+    ],
+    "comfortable_with": [
+      "Java",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "SQL",
+      "MySQL",
+      "React.js",
+      "Spring Boot",
+      "MongoDB",
+      "REST APIs"
+    ]
+  },
+
+  "professional_profile": {
+    "target_roles": [
+      "Full Stack Developer",
+      "Java Developer",
+      "Software Developer",
+      "Data Analyst",
+      "AI Engineer",
+      "Python Developer"
+    ],
+    "preferred_domains": [
+      "Full Stack Development",
+      "Backend Development",
+      "AI Engineering",
+      "Data Analytics"
+    ],
+    "short_term_goal": "Get a software development role where I can strengthen my Java, full-stack, AI and problem-solving skills while working on real-world projects.",
+    "long_term_goal": "In the next five years, I see myself becoming a significant contributor to the organization and gradually taking on leadership responsibilities based on my skills and experience. I want to remain adaptable because technology, market requirements and business models continue to change. I want to continuously learn new technologies and adapt to changing requirements so that I can continue contributing effectively to the organization.",
+    "why_it": "I became interested in technology during the holidays after my 10th board examination. I was curious about how websites and applications work, so I started exploring HTML and C programming. I enjoyed learning how software is built, which motivated me to pursue a Diploma in Information Technology and later continue with my Bachelor's degree in Information Technology.",
+    "why_software_development": "I enjoy solving problems through code and building applications that can solve practical problems. During my academic projects, internships and personal projects, I realized that I enjoy turning an idea or requirement into a working application. That interest motivates me to pursue software development as a career.",
+    "motivation": "I feel motivated when I learn something new and see progress in my work. Completing challenging tasks successfully and continuously improving my skills motivates me to perform better every day.",
+    "inspiration": "My biggest inspiration is my future self. I imagine where I want to be in five years and work daily to reach that goal."
+  },
+
+  "strengths": [
+    {
+      "name": "Adaptability",
+      "description": "During a semester project, the team decided to switch the frontend technology to React because it offered better component reusability and scalability. Although I had limited React experience at that time, I spent extra time learning it through documentation and practice and successfully completed my part on time.",
+      "example": "Learning and adapting to React when the project requirements changed."
+    },
+    {
+      "name": "Consistency and dedication",
+      "description": "Whenever I take responsibility for a task, I remain committed until it is completed successfully. I regularly follow a schedule during project development and placement preparation and continue working even when tasks become difficult.",
+      "example": "Maintaining consistent effort during project development and placement preparation."
+    },
+    {
+      "name": "Willingness to learn",
+      "description": "When I encounter a technology that I have not worked with before, I try to understand it through documentation, practice and projects.",
+      "example": "While learning AI Engineering, I started with LLM fundamentals and gradually explored structured outputs, prompt engineering and prompt chaining, then applied these concepts in projects."
+    }
+  ],
+
+  "hr_profile": {
+    "self_introduction": "My name is Snehal Krushna Bandal. I am currently pursuing a Bachelor of Engineering in Information Technology from Atharva College of Engineering, Mumbai, with a CGPA of 9.13 till the latest semester. I completed my Diploma in Information Technology from Government Polytechnic Awasari with 91.2%. During my diploma and engineering journey, I developed a strong foundation in programming and web development. I gained knowledge of Java, SQL, HTML, CSS, JavaScript, React.js, Node.js, and MongoDB through academics, internships, personal projects, and hands-on projects. Apart from academics, I am an active open-source contributor and have contributed to GirlScript Summer of Code 2026. I was also part of teams selected for Smart India Hackathon in 2025 and 2026. I genuinely enjoy learning and adapting, and that curiosity pushes me to improve every day. I hope to join a company where I can continue learning, contribute my skills and work on real-world projects.",
+
+    "weakness": {
+      "primary": "Earlier, I used to feel nervous while speaking in formal situations and in front of large audiences. To overcome this, I started participating in project presentations, technical events and student activities. These experiences have improved my confidence, and I continue working on becoming a better communicator.",
+      "alternative": "I sometimes spend too much time trying to make my work perfect."
+    },
+
+    "how_i_handle_pressure": "I try to stay calm, break the work into smaller tasks and prioritize the most important work first.",
+
+    "how_i_handle_deadlines": "I divide the task into smaller parts, prioritize them and track my progress so that I can complete the important work before the deadline.",
+
+    "teamwork_style": "I communicate with team members, divide responsibilities according to our strengths and discuss problems together when someone gets stuck. I have also had opportunities to lead semester project teams during my diploma and B.E. because of my interest in learning, communication and keeping the team together.",
+
+    "failure_and_learning": "I see failure as an opportunity to understand what I need to improve. I participated in a hackathon where our idea was not selected in the initial submission round. Instead of being discouraged, I tried to understand where we could improve and worked on those areas. Later, I became part of teams that were selected for Smart India Hackathon in both 2025 and 2026. This taught me that failure can help identify areas for improvement and motivate us to perform better.",
+
+    "conflict_handling": "During a semester project, a teammate and I had different opinions about which database to use. Instead of continuing the disagreement, we decided to build small applications using both technologies and compare them. After exploring both options, we realized that my teammate's suggestion was more suitable for the project, so we decided to use that database. This taught me that I may not always be right and that understanding another person's perspective and evaluating ideas objectively is important.",
+
+    "biggest_achievement": [
+      "Achieved 1st rank in the 10th board examination at my school and tuition.",
+      "Was part of teams selected for Smart India Hackathon in both 2025 and 2026."
+    ],
+
+    "biggest_challenge": "During a semester project, I had a disagreement with a teammate about which database to use. We built small applications using both technologies and compared them. After evaluating both options, we realized that my teammate's suggestion was more suitable, so we selected that database. This taught me the importance of considering another person's perspective and understanding that I may not always be right.",
+
+    "why_should_company_consider_me": "I believe I can contribute through my technical skills, willingness to learn, adaptability and consistent approach to work. I have built projects using Java, Spring Boot, React, Node.js, databases, REST APIs and AI technologies, and I have gained practical experience through internships and academic projects. I can adapt when requirements or technologies change and I am comfortable learning technologies that I have not worked with before. I have worked on team projects, participated in hackathons, contributed to open-source projects and taken responsibilities within student activities. As a fresher, I know that I still have a lot to learn, and I am willing to learn from experienced professionals, take responsibility, continuously improve my skills and contribute to real-world projects."
+  },
+
+  "personal_profile": {
+    "hobbies": [
+      {
+        "name": "Macrame art",
+        "description": "I enjoy creating handmade macrame art such as keychains, wall hangings and decorative torans. It allows me to express my creativity and improves my patience and focus."
+      },
+      {
+        "name": "Cooking",
+        "description": "I enjoy cooking, especially when I want to feel fresh or relaxed."
+      },
+      {
+        "name": "Movies and web series",
+        "description": "I enjoy watching movies and web series in my free time."
+      },
+      {
+        "name": "Music and motivational content",
+        "description": "I enjoy listening to music, including Hanuman Chalisa and spiritual or motivational content."
+      }
+    ],
+    "interests": [
+      "Web development",
+      "Artificial Intelligence",
+      "New technologies",
+      "Software development"
+    ],
+    "favorite_areas_to_learn": [
+      "Software development",
+      "Artificial Intelligence",
+      "New technologies"
+    ],
+    "activities_outside_academics": [
+      "Open-source contribution through GirlScript Summer of Code 2026",
+      "Participation in Smart India Hackathon 2025 and 2026",
+      "Web Development Team Member at GDGC ACE",
+      "Volunteering and student activities"
+    ]
+  },
+
+  "work_preferences": {
+    "preferred_roles": [
+      "Full Stack Developer",
+      "Java Developer",
+      "Software Developer",
+      "Data Analyst",
+      "AI Engineer",
+      "Python Developer"
+    ],
+    "preferred_locations": ["Mumbai", "Pune"],
+    "current_location": "Mumbai, Maharashtra, India",
+    "open_to_relocation": true,
+    "preferred_work_mode": ["Remote", "Hybrid", "Onsite"],
+    "open_to_remote": true,
+    "open_to_hybrid": true,
+    "open_to_onsite": true,
+    "internship_interest": true,
+    "full_time_interest": true,
+    "availability": "Open to internship opportunities and future full-time opportunities.",
+    "joining_timeline": "Available for internships; full-time availability will be based on graduation timeline."
+  },
+
+  "ai_ml_profile": {
+    "experience_level": "Currently learning and applying AI Engineering concepts through practical projects.",
+    "concepts_learned": [
+      "LLM API calls",
+      "System and user roles",
+      "Tokens",
+      "Structured outputs",
+      "Prompt engineering",
+      "Prompt chaining"
+    ],
+    "experience": [
+      "AI Resume Screening System",
+      "AI-Powered Fitness Tracking System",
+      "Snehal AI"
+    ],
+    "current_focus": [
+      "AI Engineering",
+      "LLM Application Development",
+      "Prompt Engineering",
+      "Structured LLM Outputs",
+      "Practical AI Applications"
+    ]
+  },
+
+  "projects": [
+    {
+      "name": "AI-Powered Fitness Tracking System",
+      "short_description": "A full-stack fitness tracking application that allows users to securely track fitness activities and receive AI-generated personalized fitness recommendations.",
+      "problem": "Users need a secure and convenient way to track fitness activities and receive personalized recommendations based on their fitness data.",
+      "solution": "Developed a full-stack fitness tracking application with microservices, secure authentication, event-driven communication and AI-generated fitness recommendations.",
+      "role": "Developed the full-stack application and worked on microservices architecture, REST APIs, authentication, event-driven communication, database integration and AI recommendation functionality.",
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "Spring Cloud",
+        "Microservices",
+        "React.js",
+        "Apache Kafka",
+        "Keycloak",
+        "MongoDB",
+        "PostgreSQL",
+        "Google Gemini",
+        "Material UI"
+      ],
+      "features": [
+        "Fitness activity tracking",
+        "AI-generated personalized recommendations",
+        "Microservices architecture",
+        "API Gateway",
+        "Eureka Service Discovery",
+        "Keycloak authentication",
+        "OAuth2/JWT authorization",
+        "Apache Kafka event-driven communication",
+        "REST APIs",
+        "MongoDB and PostgreSQL integration",
+        "React frontend",
+        "Material UI"
+      ],
+      "challenges": [
+        "Managing communication between multiple microservices",
+        "Implementing secure authentication and authorization",
+        "Handling event-driven communication",
+        "Integrating AI-generated recommendations"
+      ],
+      "solutions": [
+        "Used Spring Cloud Gateway for centralized API routing",
+        "Used Eureka Service Discovery",
+        "Implemented Keycloak with OAuth2/JWT",
+        "Used Apache Kafka for event-driven communication",
+        "Integrated Google Gemini AI"
+      ],
+      "learnings": [
+        "Spring Boot microservices",
+        "Service discovery",
+        "API gateway concepts",
+        "Apache Kafka",
+        "Keycloak and OAuth2/JWT",
+        "AI integration",
+        "Scalable full-stack application development"
+      ],
+      "github_url": "https://github.com/SnehalKrushnaBandal/fitness-microservices",
+      "live_url": null,
+      "featured": true
+    },
+
+    {
+      "name": "LegalLens",
+      "short_description": "An AI-assisted platform designed to help inspectors analyze packaged products, extract label information, check compliance rules and generate digital inspection reports.",
+      "problem": "Checking packaged commodities for Legal Metrology compliance can require inspectors to manually examine product packaging and verify required declarations.",
+      "solution": "Built an AI-assisted inspection platform that combines image scanning, OCR, AI analysis, rule-based validation, evidence management and digital reporting.",
+      "role": "Worked on the demo full-stack application, website structure, React inspector interface, FastAPI backend APIs, compliance workflow, evidence management and digital report generation.",
+      "technologies": [
+        "React",
+        "Python",
+        "FastAPI",
+        "Gemini",
+        "YOLO",
+        "Google Vision",
+        "RapidOCR",
+        "Supabase",
+        "REST APIs",
+        "Image Processing"
+      ],
+      "features": [
+        "Product and packaging image scanning",
+        "Label information extraction",
+        "OCR text extraction",
+        "AI-assisted label analysis",
+        "Legal Metrology compliance checking",
+        "Product compliance assessment",
+        "Inspection evidence tracking",
+        "Digital compliance reports",
+        "Inspector-oriented workflow"
+      ],
+      "challenges": [
+        "Different fonts, orientations, layouts and image quality",
+        "Different packaging layouts and declaration formats",
+        "Keeping images, extracted information and compliance results associated with the correct inspection"
+      ],
+      "solutions": [
+        "Used OCR pipelines for text extraction",
+        "Combined OCR, AI analysis and rule-based validation",
+        "Used FastAPI REST APIs to connect frontend, AI/OCR services, database and reporting workflow",
+        "Used YOLO-based image analysis where visual detection was required"
+      ],
+      "learnings": [
+        "Real-world AI/ML integration",
+        "OCR and computer vision",
+        "FastAPI REST API development",
+        "Rule-based validation",
+        "Image-processing pipelines"
+      ],
+      "github_url": "https://github.com/SnehalKrushnaBandal/LegalLens",
+      "live_url": null,
+      "featured": true
+    },
+
+    {
+      "name": "AI Resume Screening System",
+      "short_description": "An AI-powered recruitment system that analyzes job descriptions and multiple resumes to identify matching and missing skills and evaluate candidate-job compatibility.",
+      "problem": "Recruiters may need to review multiple resumes against a job description, which can be time-consuming.",
+      "solution": "Built an AI-powered resume screening system that parses job descriptions and resumes, extracts structured information, performs semantic matching and generates candidate match scores.",
+      "role": "Designed and developed the AI resume screening workflow including resume/JD parsing, structured extraction, semantic skill matching and candidate scoring.",
+      "technologies": [
+        "Python",
+        "Large Language Models",
+        "Prompt Engineering",
+        "PDF Parsing",
+        "DOCX Parsing"
+      ],
+      "features": [
+        "Job description analysis",
+        "PDF resume parsing",
+        "DOCX resume parsing",
+        "Structured skill extraction",
+        "Experience extraction",
+        "Education extraction",
+        "Job responsibility extraction",
+        "LLM-based semantic matching",
+        "Matching skill detection",
+        "Missing skill detection",
+        "Candidate-job compatibility analysis",
+        "Candidate match score generation",
+        "Recruitment verdict generation",
+        "Candidate ranking"
+      ],
+      "challenges": [
+        "Different resume formats and structures",
+        "Matching skills based on meaning rather than only exact keywords",
+        "Generating structured and consistent LLM responses"
+      ],
+      "solutions": [
+        "Used PDF/DOCX parsing",
+        "Used prompt engineering for structured extraction",
+        "Used LLM-based semantic matching",
+        "Generated structured candidate matching results"
+      ],
+      "learnings": [
+        "LLM application development",
+        "Prompt engineering",
+        "Structured LLM outputs",
+        "Resume and document parsing",
+        "Semantic matching",
+        "AI recruitment workflows"
+      ],
+      "github_url": "https://github.com/SnehalKrushnaBandal/AI-Resume-Screening-System",
+      "live_url": null,
+      "featured": true
+    },
+
+    {
+      "name": "Cafe Management System",
+      "short_description": "A Java-based cafe management application for employee order placement, owner menu management and automated PDF billing.",
+      "problem": "Cafe owners and employees need a simple system to manage menu, orders and billing efficiently.",
+      "solution": "Developed a Java application with role-based access, order management, menu management and PDF bill generation.",
+      "role": "Designed and developed the application including role-based access, order placement, menu management and automated PDF billing.",
+      "technologies": ["Java", "MySQL"],
+      "features": [
+        "Role-based access control",
+        "Employee order placement",
+        "Owner menu management",
+        "Menu updates",
+        "Order processing",
+        "Automatic bill generation",
+        "PDF bill generation",
+        "Digital record keeping"
+      ],
+      "challenges": [
+        "Implementing different access levels",
+        "Managing menu and customer orders",
+        "Generating PDF bills"
+      ],
+      "solutions": [
+        "Implemented role-based access",
+        "Designed menu and order workflows",
+        "Implemented automated PDF bill generation"
+      ],
+      "learnings": [
+        "Java application development",
+        "Role-based access control",
+        "MySQL",
+        "Real-world application workflow design",
+        "PDF generation"
+      ],
+      "github_url": "https://github.com/SnehalKrushnaBandal/Cafe-Management-System",
+      "live_url": null,
+      "featured": false
+    },
+
+    {
+      "name": "StegoAI — ML-Based Video Steganography System",
+      "short_description": "A full-stack application that embeds and extracts secret messages in videos using LSB steganography while using machine learning to detect spam content.",
+      "problem": "Sensitive information may need to be hidden inside video files while preventing unwanted or spam content from being embedded.",
+      "solution": "Built a React and Flask application using LSB steganography for video message embedding and extraction and a TF-IDF plus Naive Bayes classifier for spam detection.",
+      "role": "Developed the full-stack application and worked on video steganography, REST APIs, message embedding and extraction, OpenCV integration and machine-learning-based spam classification.",
+      "technologies": [
+        "React.js",
+        "Flask",
+        "Python",
+        "OpenCV",
+        "scikit-learn",
+        "TF-IDF",
+        "Naive Bayes",
+        "LSB Steganography",
+        "FFV1/AVI Codec",
+        "REST APIs"
+      ],
+      "features": [
+        "Secret message embedding",
+        "Secret message extraction",
+        "LSB-based video steganography",
+        "OpenCV video processing",
+        "Spam content detection",
+        "TF-IDF text feature extraction",
+        "Naive Bayes classification",
+        "RESTful APIs",
+        "Delimiter-based extraction",
+        "React frontend",
+        "Flask backend",
+        "FFV1/AVI codec support"
+      ],
+      "challenges": [
+        "Reliably embedding secret messages",
+        "Correctly extracting hidden messages",
+        "Preventing spam content",
+        "Connecting React frontend with Flask backend"
+      ],
+      "solutions": [
+        "Used OpenCV for video processing",
+        "Implemented LSB steganography",
+        "Used TF-IDF and Naive Bayes for spam detection",
+        "Used delimiter-based extraction",
+        "Built Flask REST APIs"
+      ],
+      "learnings": [
+        "Video processing",
+        "LSB steganography",
+        "Flask REST APIs",
+        "Text classification",
+        "TF-IDF",
+        "Naive Bayes",
+        "React and Python backend integration"
+      ],
+      "github_url": null,
+      "live_url": null,
+      "featured": false
+    }
+  ],
+
+  "experience": [
+    {
+      "organization": "EduSkills Foundation",
+      "role": "Java Full Stack Developer",
+      "type": "Internship/Program",
+      "duration": "Apr 2026 – Jul 2026",
+      "description": "Worked as a Java Full Stack Developer under the AICTE-affiliated EduSkills Foundation program.",
+      "responsibilities": [
+        "Worked on Java full-stack development",
+        "Gained practical software development experience"
+      ],
+      "technologies": ["Java", "Full Stack Development"],
+      "learnings": [
+        "Java full-stack development",
+        "Practical software development"
+      ]
+    },
+    {
+      "organization": "AICTE",
+      "role": "Data Analyst Intern",
+      "type": "Internship",
+      "duration": "Feb 2026 – Mar 2026",
+      "description": "Worked on data analysis and dashboard development.",
+      "responsibilities": [
+        "Built Microsoft Power BI dashboards",
+        "Analyzed data trends",
+        "Delivered actionable insights"
+      ],
+      "technologies": ["Microsoft Power BI", "Data Analytics"],
+      "learnings": [
+        "Data analysis",
+        "Dashboard development",
+        "Trend identification",
+        "Presenting insights"
+      ]
+    },
+    {
+      "organization": "Edunet Foundation",
+      "role": "Full Stack Web Development Intern",
+      "type": "Internship",
+      "duration": "Aug 2025 – Oct 2025",
+      "description": "Built full-stack web applications and REST APIs.",
+      "responsibilities": [
+        "Built full-stack web applications",
+        "Developed 3+ modules",
+        "Created REST APIs",
+        "Followed Agile methodology",
+        "Used Git-based workflows"
+      ],
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST APIs",
+        "Git"
+      ],
+      "learnings": [
+        "Full-stack development",
+        "REST API development",
+        "Agile methodology",
+        "Git workflows"
+      ]
+    },
+    {
+      "organization": "VaultofCodes",
+      "role": "Web Development Intern",
+      "type": "Internship",
+      "duration": "Aug 2025 – Sep 2025",
+      "description": "Worked on frontend web development and production-ready features.",
+      "responsibilities": [
+        "Developed 2 production-ready features",
+        "Managed Git branching workflows",
+        "Optimized frontend components",
+        "Worked on cross-browser performance"
+      ],
+      "technologies": ["React.js", "HTML5", "CSS3", "JavaScript", "Git"],
+      "learnings": [
+        "Web development",
+        "Frontend optimization",
+        "Git workflows",
+        "Cross-browser development"
+      ]
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "PromptWars: Virtual Challenge",
+      "issuer": "Hack2skill",
+      "date": "Aug 2026"
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "issuer": "IBM",
+      "date": "Aug 2025"
+    },
+    {
+      "name": "Tata – Data Visualisation: Empowering Business with Effective Insights",
+      "issuer": "Forage",
+      "date": "Jun 2025"
+    },
+    {
+      "name": "SEBI – Investor Certification Examination",
+      "issuer": "SEBI",
+      "date": "Mar 2025"
+    }
+  ],
+
+  "achievements": [
+    {
+      "title": "Google Cloud Arcade 2025 — Legend Tier",
+      "organization": "Google Cloud",
+      "year": "2025",
+      "description": "Completed 450+ labs, 100+ skill badges and 70+ courses covering BigQuery, Vertex AI, Cloud Functions and Compute Engine."
+    },
+    {
+      "title": "Smart India Hackathon 2026",
+      "organization": "Smart India Hackathon",
+      "year": "2026",
+      "description": "Team selected for Smart India Hackathon 2026; detailed profile states a 22nd rank out of 60+ teams."
+    },
+    {
+      "title": "Smart India Hackathon 2025",
+      "organization": "Smart India Hackathon",
+      "year": "2025",
+      "description": "Team selected among the Top 50 teams at Atharva College of Engineering."
+    },
+    {
+      "title": "Open-Source Contributor",
+      "organization": "GirlScript Summer of Code",
+      "year": "2026",
+      "description": "Contributed to open-source projects and collaborated with developers from different backgrounds."
+    },
+    {
+      "title": "Web Development Team Member",
+      "organization": "GDGC ACE",
+      "year": "2025",
+      "description": "Worked as a Web Development Team Member and helped organize the Pixel Designathon hackathon, including planning, promotion and execution."
+    },
+    {
+      "title": "2nd Place — Technical Model Exhibition",
+      "organization": "Government Polytechnic Awasari (KH)",
+      "year": "2024",
+      "description": "Achieved second place in an institute-level interdisciplinary technical model exhibition."
+    },
+    {
+      "title": "1st Rank in SSC Board Examination",
+      "organization": "Prof. Dr. N. D. Patil Vidyalaya",
+      "year": "2020",
+      "description": "Achieved first rank in the 10th board examination at school level."
+    }
+  ],
+
+  "social_links": {
+    "linkedin": "https://www.linkedin.com/in/snehal-bandal-514592267/",
+    "github": "https://github.com/SnehalKrushnaBandal",
+    "email": "skbandal02@gmail.com"
+  },
+
+  "knowledge_sources": [
+    {
+      "source": "resume",
+      "available": true
+    },
+    {
+      "source": "candidate_profile",
+      "available": true
+    },
+    {
+      "source": "projects",
+      "available": true
+    },
+    {
+      "source": "experience",
+      "available": true
+    }
+  ],
+  "recruiter_profile": {
+    "open_to_recruiter_questions": true,
+    "target_roles": [
+      "Full Stack Developer",
+      "Java Developer",
+      "Software Developer",
+      "AI Engineer"
+    ],
+    "preferred_locations": ["Mumbai", "Pune"],
+    "open_to_relocation": true,
+    "work_modes": ["Remote", "Hybrid", "Onsite"],
+    "internship_interest": true,
+    "full_time_interest": true,
+    "match_features": [
+      "skill_matching",
+      "missing_skill_detection",
+      "experience_requirement_check",
+      "project_relevance",
+      "match_summary"
+    ]
+  }
+}
