@@ -23,3 +23,9 @@ Thumbs.db
 **/*Resume*.pdf
 SnehalBandal_Resume.pdf
 **/SnehalBandal_Resume.pdf
+
+# Node.js
+node_modules/
+**/node_modules/
+dist/
+**/dist/

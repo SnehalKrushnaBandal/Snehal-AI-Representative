@@ -8,6 +8,7 @@ from pydantic import BaseModel
 import json
 from fastapi.responses import StreamingResponse
 from services.candidate_service import load_candidate_profile
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
@@ -16,9 +17,18 @@ if not my_api_key:
     raise ValueError("API Error")
 
 client = Groq(api_key=my_api_key)
+# model = "openai/gpt-oss-20b"
 model = "openai/gpt-oss-120b"
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ************ Part 1 
 # 1. Pdf Extraction
@@ -62,14 +72,25 @@ Return ONLY valid JSON matching this schema:
 
 Important rules: 
 
-1. Do not invent information.
-2. If a value is not available, return null.
-3. If a list has no information, return an empty list.
-4. Include internships inside experiences.
-5. Extract skills mentioned across the entire resume.
-6. Return ONLY the JSON object.
-7. Do not use markdown.
-8. Do not add explanations before or after the JSON.
+1. Answer only using the supplied information.
+2. Never invent information.
+3. If the information is unavailable, say:
+   "I don't have enough information to answer that."
+4. Be professional and factual.
+5. Answer as if you are representing the candidate.
+6. Do not assume information that is not present.
+7. Do not confuse technologies mentioned in projects with technologies
+   the candidate claims as their strongest skills.
+8. Keep answers concise and recruiter-friendly.
+9. Prefer short paragraphs or bullet points for lists.
+10. Do not use Markdown tables unless the recruiter explicitly asks
+    for a comparison or tabular format.
+11. Do not create unnecessary headings or long explanations.
+12. For simple factual questions, answer directly in 1-4 sentences.
+13. For questions about strengths, skills, hobbies, education,
+    experience, or projects, use bullet points when multiple items
+    are needed.
+
 """
 
     user_prompt = f"""
@@ -143,24 +164,125 @@ resume_schema = Resume_Class.model_json_schema()
 
 def get_relevant_profile(question: str, candidate_profile: dict):
 
-    question = question.lower()
+    question = question.lower().strip()
 
-    if any(word in question for word in [
-        "hobby",
-        "hobbies",
-        "interest",
-        "interests",
-        "free time",
-        "personal"
+# =========================
+# PROJECTS
+# =========================
+
+    projects = candidate_profile["projects"]
+
+    if any(term in question for term in [
+        "legallens",
+        "legal lens",
+        "text extraction",
+        "extract text",
+        "text extracted",
+        "ocr",
+        "how text is extracted",
+        "how is text extracted",
+        "database",
+        "databases",
+        "technology used",
+        "technologies used",
+        "tech stack",
+        "tech stack used",
+        "tools used",
+        "framework used",
+        "frameworks used",
+        "which technologies",
+        "which technology"
+    ]):
+        for project in projects:
+            if project.get("name", "").lower() == "legallens":
+                return {
+                    "project": project
+                }
+
+    if any(term in question for term in [
+        "fitness tracking",
+        "fitness project",
+        "ai fitness"
+    ]):
+        for project in projects:
+            if "fitness" in project.get("name", "").lower():
+                return {
+                    "project": project
+                }
+
+    if any(term in question for term in [
+        "resume screening",
+        "resume screening system"
+    ]):
+        for project in projects:
+            if "resume screening" in project.get("name", "").lower():
+                return {
+                    "project": project
+                }
+
+    if any(term in question for term in [
+        "cafe management",
+        "cafe project"
+    ]):
+        for project in projects:
+            if "cafe" in project.get("name", "").lower():
+                return {
+                    "project": project
+                }
+
+    if any(term in question for term in [
+        "stegoai",
+        "stego ai"
+    ]):
+        for project in projects:
+            if "stegoai" in project.get("name", "").lower():
+                return {
+                    "project": project
+                }
+
+    if any(term in question for term in [
+        "project",
+        "projects",
+        "explain project",
+        "explain the project",
+        "project in detail",
+        "explain project in detail",
+        "project details",
+        "project overview"
     ]):
         return {
-            "personal_profile": candidate_profile["personal_profile"]
+            "projects": projects
         }
 
-    if any(word in question for word in [
+
+    # =========================
+    # STRENGTHS
+    # =========================
+    if any(term in question for term in [
         "strength",
-        "strengths",
+        "strengths"
+    ]):
+        return {
+            "strengths": candidate_profile["strengths"]
+        }
+
+    # =========================
+    # WEAKNESS
+    # =========================
+    if any(term in question for term in [
         "weakness",
+        "weaknesses"
+    ]):
+        return {
+            "hr_profile": {
+                "weakness": candidate_profile["hr_profile"].get("weakness")
+            }
+        }
+
+    # =========================
+    # HR QUESTIONS
+    # =========================
+    if any(term in question for term in [
         "pressure",
         "deadline",
         "teamwork",
@@ -168,37 +290,59 @@ def get_relevant_profile(question: str, candidate_profile: dict):
         "failure",
         "conflict",
         "achievement",
-        "challenge",
-        "introduction"
+        "challenge"
     ]):
         return {
-            "strengths": candidate_profile["strengths"],
             "hr_profile": candidate_profile["hr_profile"]
         }
 
-    if any(word in question for word in [
+    # =========================
+    # EXPERIENCE
+    # =========================
+    if any(term in question for term in [
+        "experience",
+        "internship experience",
+        "internships",
+        "worked at",
+        "previous role",
+        "previous company",
+        "work experience"
+    ]):
+        return {
+            "experience": candidate_profile["experience"]
+        }
+
+    # =========================
+    # CAREER
+    # =========================
+    if any(term in question for term in [
+        "career goal",
+        "career goals",
         "career",
-        "goal",
-        "goals",
         "motivation",
         "why it",
         "why information technology",
         "why software",
-        "software development"
+        "why software development"
     ]):
         return {
             "professional_profile": candidate_profile["professional_profile"]
         }
 
-    if any(word in question for word in [
+    # =========================
+    # WORK PREFERENCES
+    # =========================
+    if any(term in question for term in [
         "relocate",
         "relocation",
-        "location",
+        "preferred location",
+        "preferred locations",
+        "work location",
         "remote",
         "hybrid",
         "onsite",
-        "internship",
         "full time",
+        "full-time",
         "availability",
         "joining"
     ]):
@@ -206,44 +350,17 @@ def get_relevant_profile(question: str, candidate_profile: dict):
             "work_preferences": candidate_profile["work_preferences"]
         }
 
-    if any(word in question for word in [
-        "project",
-        "projects",
-        "legallens",
-        "fitness",
-        "resume screening",
-        "cafe",
-        "stego"
-    ]):
-        return {
-            "projects": candidate_profile["projects"]
-        }
-
-    if any(word in question for word in [
-        "skill",
-        "skills",
-        "technology",
-        "technologies",
-        "java",
-        "python",
-        "react",
-        "node",
-        "spring",
-        "database",
-        "backend",
-        "frontend",
-        "ai",
-        "cloud"
-    ]):
-        return {
-            "technical_profile": candidate_profile["technical_profile"]
-        }
-
-    if any(word in question for word in [
+    # =========================
+    # EDUCATION
+    # =========================
+    if any(term in question for term in [
         "education",
         "college",
         "degree",
         "cgpa",
+        "graduation",
+        "graduation year",
+        "graduate",
         "diploma",
         "school",
         "study"
@@ -253,20 +370,169 @@ def get_relevant_profile(question: str, candidate_profile: dict):
             "education": candidate_profile["education"]
         }
 
-    # Default context for general questions
+    # =========================
+    # TECHNICAL SKILLS
+    # =========================
+    if any(term in question for term in [
+        "skill",
+        "skills",
+        "technology",
+        "technologies",
+        "java",
+        "python",
+        "react",
+        "node.js",
+        "node",
+        "spring boot",
+        "spring",
+        "database",
+        "backend",
+        "frontend",
+        "cloud"
+    ]):
+        return {
+            "technical_profile": candidate_profile["technical_profile"]
+        }
+
+    # =========================
+    # PERSONAL
+    # =========================
+    if any(term in question for term in [
+        "hobby",
+        "hobbies",
+        "interest",
+        "interests",
+        "free time"
+    ]):
+        return {
+            "personal_profile": candidate_profile["personal_profile"]
+        }
+
+    # =========================
+    # DEFAULT
+    # =========================
     return {
-        "basic_profile": candidate_profile["basic_profile"],
-        "professional_profile": candidate_profile["professional_profile"]
+        "basic_profile": candidate_profile["basic_profile"]
     }
 
-# ************ Part 3 : Creating system and user prompt  
+# =========================
+# Part 3 : Creating system and user prompt
+# =========================
+
+class ChatMessage_Class(BaseModel):
+    role: str
+    content: str
+
+
 class ChatRequest_Class(BaseModel):
-    question : str
+    question: str
+    history: list[ChatMessage_Class] = []
+
+
+def build_candidate_system_prompt(
+    question: str,
+    resume: Resume_Class,
+    relevant_profile: dict
+):
+
+    return f"""
+You are Snehal AI, the AI-powered developer representative of
+Snehal Krushna Bandal.
+
+Your job is to answer questions about Snehal using ONLY the
+relevant candidate information supplied below.
+
+=== RELEVANT CANDIDATE PROFILE ===
+
+{json.dumps(relevant_profile, indent=2)}
+
+=== STRICT RULES ===
+
+1. Use ONLY the information provided above.
+
+2. Never invent, assume, or infer facts that are not explicitly provided.
+
+3. Give the most direct answer to the question.
+
+4. Keep normal answers concise, usually 1-4 sentences.
+
+5. Do not provide a long explanation unless the recruiter explicitly
+asks for details.
+
+6. Do not include information from unrelated sections.
+
+7. Do not turn a simple question into a complete candidate summary.
+
+8. If the information is not available, say exactly:
+
+"I don't have enough information to answer that."
+
+9. When listing multiple items, use short bullet points.
+
+10. Do not create fictional examples or experiences.
+
+11. Do not add a GitHub link unless the recruiter asks for it.
+
+12. Represent Snehal professionally and factually.
+
+
+=== PROJECT RULES ===
+
+=== PROJECT RULES ===
+
+13. When the question is about a specific project, answer only about
+that requested project.
+
+14. Do not describe other projects unless the recruiter asks for
+a comparison.
+
+15. For "What is..." or "Tell me about..." questions, give a concise
+project overview.
+
+16. For "Explain..." or "in detail" questions, provide a structured
+but focused explanation.
+
+17. When explaining a project in detail, cover only the information
+available in the project profile, such as:
+- Project purpose
+- Problem being solved
+- Main features
+- Technologies used
+- How the system works
+- AI/OCR components
+- Database
+- Outcome or purpose
+
+18. Do not invent technical details that are not present in the
+candidate profile.
+
+19. For questions about one specific aspect such as technologies,
+database, OCR, features, or challenges, answer only that aspect.
+
+20. Do not provide information about unrelated projects.
+
+=== ANSWER STYLE ===
+
+Simple factual question:
+Give a short direct answer.
+
+Strength question:
+Give only the actual strengths from the candidate profile.
+
+Project question:
+Give the project name and a short description first.
+
+HR question:
+Use the relevant HR information directly and keep the response concise.
+
+Answer the recruiter's question directly.
+"""
 
 def ask_candidate(
     question: str,
     resume: Resume_Class,
-    candidate_profile: dict
+    candidate_profile: dict,
+    history: list[ChatMessage_Class]
 ):
 
     relevant_profile = get_relevant_profile(
@@ -274,54 +540,46 @@ def ask_candidate(
         candidate_profile
     )
 
-    sys_prompt = f"""
-You are an AI assistant representing Snehal Krushna Bandal.
+    sys_prompt = build_candidate_system_prompt(
+        question,
+        resume,
+        relevant_profile
+    )
 
-You are answering questions about the candidate using the information
-provided below.
+  
+    messages = [
+    {
+        "role": "system",
+        "content": sys_prompt
+    }
+    ]
 
-=== RESUME DATA ===
+    for message in history:
+        messages.append({
+            "role": message.role,
+            "content": message.content
+        })
 
-{resume.model_dump_json(indent=2)}
-
-=== RELEVANT CANDIDATE PROFILE ===
-
-{json.dumps(relevant_profile, indent=2)}
-
-=== RULES ===
-
-1. Answer only using the supplied information.
-2. Never invent information.
-3. If the information is unavailable, say:
-   "I don't have enough information to answer that."
-4. Be professional and factual.
-5. Answer as if you are representing the candidate.
-6. Do not assume information that is not present.
-7. Do not confuse technologies mentioned in projects with technologies
-   the candidate claims as their strongest skills.
-"""
+    messages.append({
+        "role": "user",
+        "content": question
+    })
 
     response = client.chat.completions.create(
         model=model,
-        messages=[
-            {
-                "role": "system",
-                "content": sys_prompt
-            },
-            {
-                "role": "user",
-                "content": question
-            }
-        ]
+        messages=messages
     )
+    
 
     return response.choices[0].message.content
+
 
 # *********** Streaming answer
 def stream_candidate_answer(
     question: str,
     resume: Resume_Class,
-    candidate_profile: dict
+    candidate_profile: dict,
+    history: list[ChatMessage_Class]
 ):
 
     relevant_profile = get_relevant_profile(
@@ -329,53 +587,43 @@ def stream_candidate_answer(
         candidate_profile
     )
 
-    sys_prompt = f"""
-You are an AI assistant representing Snehal Krushna Bandal.
+    sys_prompt = build_candidate_system_prompt(
+        question,
+        resume,
+        relevant_profile
+    )
 
-You are answering questions about the candidate using the information
-provided below.
+    messages = [
+        {
+            "role": "system",
+            "content": sys_prompt
+        }
+    ]
 
-=== RESUME DATA ===
+    for message in history:
+        messages.append({
+            "role": message.role,
+            "content": message.content
+        })
 
-{resume.model_dump_json(indent=2)}
-
-=== RELEVANT CANDIDATE PROFILE ===
-
-{json.dumps(relevant_profile, indent=2)}
-
-=== RULES ===
-
-1. Answer only using the supplied information.
-2. Never invent information.
-3. If the information is unavailable, say:
-   "I don't have enough information to answer that."
-4. Be professional and factual.
-5. Answer as if you are representing the candidate.
-6. Do not assume information that is not present.
-7. Do not confuse technologies mentioned in projects with technologies
-   the candidate claims as their strongest skills.
-"""
+    messages.append({
+        "role": "user",
+        "content": question
+    })
 
     stream = client.chat.completions.create(
         model=model,
-        messages=[
-            {
-                "role": "system",
-                "content": sys_prompt
-            },
-            {
-                "role": "user",
-                "content": question
-            }
-        ],
+        messages=messages,
         stream=True
     )
+
     for chunk in stream:
 
         content = chunk.choices[0].delta.content
 
         if content:
             yield content
+
 
 RESUME_PATH = Path("SnehalBandal_Resume.pdf")
 PROFILE_PATH = Path("candidate_profile.json")
@@ -399,7 +647,7 @@ def home():
 @app.post("/chat")
 def chat(request: ChatRequest_Class):
 
-    answer = ask_candidate( request.question, resume, candidate_profile )
+    answer = ask_candidate( request.question, resume, candidate_profile, request.history )
 
     return {
         "answer": answer
@@ -413,7 +661,8 @@ def chat_stream(request: ChatRequest_Class):
         stream_candidate_answer(
             request.question,
             resume,
-            candidate_profile
+            candidate_profile,
+            request.history
         ),
         media_type="text/plain"
     )
